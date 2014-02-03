@@ -8,15 +8,18 @@ patterns:
 - name: comment.line.res
   match: (//).*$\n?
 
+- name: keyword.command.res
+  match: \b(?i)((field|control)name|visible|enable(d)?|font|fgcolor|labeltext|textalignment|image|((x|y|z)pos|wide|tall)(\_(minmode|hidef|lodef))?|(blue|red)_active_xpos|meter(bg|fg)|RightMargin(_(hidef|lodef))?)\b
+
 - name: constant.numeric.source.res
   match: \b(?<=\")[cfr]?[\-\+]?[0-9\. ]+(?=\")\b
 
-- name: quoted.string.line.res
-  match: (")([a-zA-Z\_\-\.\/\+\%\# ]+\d{1,2}*)(")
-  captures:
-    '1': {name: punctuation.quote.double}
-    '2': {name: string.quoted}
-    '4': {name: punctuation.quote.double}
+# - name: quoted.string.line.res
+#   match: (")([a-zA-Z\_\-\.\/\+\%\# ]+\d{1,2}*)(")
+#   captures:
+#     '1': {name: punctuation.quote.double}
+#     '2': {name: string.quoted}
+#     '4': {name: punctuation.quote.double}
 
 - name: quoted.string.line.res
   match: \b([\w\.]+)\b([\n\t\r]+)
