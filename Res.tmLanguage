@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>res</string>
+	</array>
+	<key>name</key>
+	<string>Res</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>(//).*$\n?</string>
+			<key>name</key>
+			<string>comment.line.res</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?&lt;=\")[cfr]?[\-\+]?[0-9\. ]+(?=\")\b</string>
+			<key>name</key>
+			<string>constant.numeric.source.res</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.quote.double</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.quote.double</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(")([a-zA-Z\_\-\.\/\+\%\# ]{3,}\d{1,2}*)(")</string>
+			<key>name</key>
+			<string>quoted.string.line.res</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b([\w\.]+)\b([\n\t\r]+)</string>
+			<key>name</key>
+			<string>quoted.string.line.res</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\[.+\]</string>
+			<key>name</key>
+			<string>keyword.other.ahk</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.res</string>
+	<key>uuid</key>
+	<string>f88d90b8-2340-4db4-a003-3488467595ae</string>
+</dict>
+</plist>

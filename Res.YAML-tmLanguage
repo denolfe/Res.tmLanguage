@@ -1,0 +1,27 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+name: Res
+scopeName: source.res
+fileTypes: [res]
+uuid: f88d90b8-2340-4db4-a003-3488467595ae
+
+patterns:
+- name: comment.line.res
+  match: (//).*$\n?
+
+- name: constant.numeric.source.res
+  match: \b(?<=\")[cfr]?[\-\+]?[0-9\. ]+(?=\")\b
+
+- name: quoted.string.line.res
+  match: (")([a-zA-Z\_\-\.\/\+\%\# ]{3,}\d{1,2}*)(")
+  captures:
+    '1': {name: punctuation.quote.double}
+    '2': {name: string.quoted}
+    '4': {name: punctuation.quote.double}
+
+- name: quoted.string.line.res
+  match: \b([\w\.]+)\b([\n\t\r]+)
+  captures:
+    '1': {name: keyword.operator}
+
+- name: keyword.other.ahk
+  match: \[.+\]
