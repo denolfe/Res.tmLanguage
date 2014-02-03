@@ -12,7 +12,7 @@ patterns:
   match: \b(?<=\")[cfr]?[\-\+]?[0-9\. ]+(?=\")\b
 
 - name: quoted.string.line.res
-  match: (")([a-zA-Z\_\-\.\/\+\%\# ]{3,}\d{1,2}*)(")
+  match: (")([a-zA-Z\_\-\.\/\+\%\# ]+\d{1,2}*)(")
   captures:
     '1': {name: punctuation.quote.double}
     '2': {name: string.quoted}
@@ -21,7 +21,7 @@ patterns:
 - name: quoted.string.line.res
   match: \b([\w\.]+)\b([\n\t\r]+)
   captures:
-    '1': {name: keyword.operator}
+    '1': {name: storage.type.primitive.array}
 
 - name: keyword.other.ahk
   match: \[.+\]
